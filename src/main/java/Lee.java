@@ -1,4 +1,5 @@
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Queue;
 
 public class Lee
@@ -6,10 +7,10 @@ public class Lee
     private static final int[] row = { -1, 0, 0, 1 };
     private static final int[] col = { 0, -1, 1, 0 };
 
-    public int alg(int matrix[][],Chords Spoint,Chords target)
+    public int alg(ArrayList<ArrayList<Integer>> matrix, Chords Spoint, Chords target)
     {
-        int McolL = matrix.length;
-        int MrowL = matrix[0].length;
+        int McolL = matrix.size();
+        int MrowL = matrix.get(0).size();
         boolean[][] visited = new boolean[McolL][MrowL];
         Queue<Node> q = new ArrayDeque<>();
         visited[Spoint.x][Spoint.y] = true;
@@ -37,8 +38,8 @@ public class Lee
         }
         return -1;
     }
-    private static boolean ValidityCheck(int[][] matrix, boolean[][] visited, int row, int col)
+    private static boolean ValidityCheck(ArrayList<ArrayList<Integer>> matrix, boolean[][] visited, int row, int col)
     {
-        return (row >= 0) && (row < matrix.length) && (col >= 0) && (col < matrix[0].length) && matrix[row][col] == 1 && !visited[row][col];
+        return (row >= 0) && (row < matrix.size()) && (col >= 0) && (col < matrix.get(0).size()) && matrix.get(row).get(col) == 1 && !visited[row][col];
     }
 }

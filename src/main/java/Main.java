@@ -40,7 +40,8 @@ public class Main
                 temp1d = new ArrayList<>();
             }
         }
-        int mat [][];
+        MainHelp MH = new MainHelp("S","X");
+        ArrayList<ArrayList<Integer>> mat = MH.InputToMatrix(testin,"\n");
         Lee z = new Lee();
         int x =z.alg(mat,new Chords(0,0),new Chords(7,5));
         System.out.println(x);
