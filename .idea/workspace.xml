@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc9e253c-efc1-4492-bf48-a2210e7bd29d" name="Changes" comment="Lee alg implemented, cleaning and input left to write, and well ofcourse debuging. Possibly adding multithread.">
+    <list default="true" id="fc9e253c-efc1-4492-bf48-a2210e7bd29d" name="Changes" comment="Created converter string to matrix, now just file input and flat input.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Lee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MainHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainHelp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657197811837</updated>
       <workItem from="1657197813211" duration="14181000" />
-      <workItem from="1657358325499" duration="4101000" />
+      <workItem from="1657358325499" duration="10044000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1657197939477</created>
@@ -79,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657214260832</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Created converter string to matrix, now just file input and flat input.">
+      <created>1657364787581</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657364787581</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +107,38 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Lee alg implemented, cleaning and input left to write, and well ofcourse debuging. Possibly adding multithread." />
-    <option name="LAST_COMMIT_MESSAGE" value="Lee alg implemented, cleaning and input left to write, and well ofcourse debuging. Possibly adding multithread." />
+    <MESSAGE value="Created converter string to matrix, now just file input and flat input." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created converter string to matrix, now just file input and flat input." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -21,8 +21,10 @@ public class MainHelp
         while(Input.contains(delim))
         {
             out.add(RowCreator(Input.substring(0,Input.indexOf(delim))));
-            Input = Input.substring(Input.indexOf(delim));
+            Input = Input.substring(Input.indexOf(delim)+delim.length());
+            i = i +1;
         }
+        System.out.println(out);
         return out;
     }
     private  ArrayList<Integer> RowCreator(String In)
@@ -31,15 +33,15 @@ public class MainHelp
         In = In.replace("#","0");
         if(In.contains(Source))
         {
-            SourceChords = new Chords(In.indexOf(Source),i);
+            SourceChords = new Chords(i,In.indexOf(Source));
             In = In.replace(Source,"1");
         }
         if(In.contains(Target))
         {
-            TargetChords = new Chords(In.indexOf(Target),i);
+            TargetChords = new Chords(i,In.indexOf(Target));
             In = In.replace(Target,"1");
         }
-        int[] x = Stream.of(In.split("")).mapToInt(Integer::parseInt).toArray();
+        int[] x = Stream.of(Arrays.copyOf(In.split(""),In.split("").length-1)).mapToInt(Integer::parseInt).toArray();
         return (ArrayList<Integer>) Arrays.stream(x).boxed().collect(Collectors.toList()) ;
     }
 
