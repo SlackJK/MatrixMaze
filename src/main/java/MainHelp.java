@@ -39,9 +39,9 @@ public class MainHelp
         if(In.contains(Target))
         {
             TargetChords = new Chords(i,In.indexOf(Target));
-            In = In.replace(Target,"1");
+            In = In.replace(Target,"1");//,In.split("").length-1) Arrays.copyOf
         }
-        int[] x = Stream.of(Arrays.copyOf(In.split(""),In.split("").length-1)).mapToInt(Integer::parseInt).toArray();
+        int[] x = Stream.of(In.split("")).mapToInt(Integer::parseInt).toArray();
         return (ArrayList<Integer>) Arrays.stream(x).boxed().collect(Collectors.toList()) ;
     }
 

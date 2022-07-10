@@ -5,7 +5,7 @@ public class Lee
     private static final int[] row = { -1, 0, 0, 1 };
     private static final int[] col = { 0, -1, 1, 0 };
 
-    public int alg(ArrayList<ArrayList<Integer>> matrix, Chords Spoint, Chords target)
+    public ArrayList<String> alg(ArrayList<ArrayList<Integer>> matrix, Chords Spoint, Chords target)
     {
         int McolL = matrix.size();
         int MrowL = matrix.get(0).size();
@@ -31,7 +31,6 @@ public class Lee
             curChord = node.ch;
             distance = node.distance;
 
-            System.out.println(curChord.x+","+ curChord.y);
             for (int i = 0; i < 4; i++)
             {
                 if(ValidityCheck(matrix,visited,curChord.x+row[i], curChord.y+col[i]))
@@ -50,8 +49,8 @@ public class Lee
             node = HPath.get(node);
             path.add(0,node); // addFirst is used to get the correct order
         }
-        System.out.println(GetDirection(path));
-        return distance;
+
+        return GetDirection(path);
     }
     private static boolean ValidityCheck(ArrayList<ArrayList<Integer>> matrix, boolean[][] visited, int row, int col)
     {
@@ -87,7 +86,7 @@ public class Lee
             }
             //return DirectionTranslator(Out);
         }
-        System.out.println(Out);
+
         return DirectionTranslator(Out);
     }
     private static boolean NodeCompare(Node n1,Node n2)
