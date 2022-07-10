@@ -1,7 +1,4 @@
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Queue;
+import java.util.*;
 
 public class Lee
 {
@@ -12,23 +9,27 @@ public class Lee
     {
         int McolL = matrix.size();
         int MrowL = matrix.get(0).size();
+        Node StartNode = new Node(Spoint,0);
+
         boolean[][] visited = new boolean[McolL][MrowL];
         Queue<Node> q = new ArrayDeque<>();
+
         visited[Spoint.x][Spoint.y] = true;
-        q.add(new Node(Spoint,0));
+        q.add(StartNode);
+
         ArrayList<String> out = new ArrayList<>();
-        ArrayList<Node> temp = new ArrayList<>();
-        while(!q.isEmpty())
+        HashMap<Node,Node> HPath = new HashMap<>();
+        HPath.put(StartNode,null);
+        Node node = null;
+        Chords curChord = new Chords(-1,-1);
+        int distance = -1;
+
+        while(!q.isEmpty() && !(curChord.x == target.x && curChord.y == target.y))
         {
-            Node node = q.poll();
+            node = q.poll();
 
-            Chords curChord = node.ch;
-            int distance = node.distance;
-
-            if(curChord.x == target.x && curChord.y == target.y) {
-                System.out.println();
-                return distance;
-            }
+            curChord = node.ch;
+            distance = node.distance;
 
             System.out.println(curChord.x+","+ curChord.y);
             for (int i = 0; i < 4; i++)
@@ -36,12 +37,21 @@ public class Lee
                 if(ValidityCheck(matrix,visited,curChord.x+row[i], curChord.y+col[i]))
                 {
                     visited[curChord.x+row[i]][curChord.y+col[i]] = true;
-                    q.add(new Node(new Chords(curChord.x+row[i], curChord.y+col[i]),distance+1));
+                    Node tempnode = new Node(new Chords(curChord.x+row[i], curChord.y+col[i]),distance+1);
+                    q.add(tempnode);
+                    HPath.put(tempnode,node);
                     out.add(row[i]+"/"+col[i]);
                 }
             }
         }
-        return -1;
+        ArrayList<Node> path = new ArrayList<>();
+        path.add(0,node);
+        while (!NodeCompare(node,StartNode)) {
+            node = HPath.get(node);
+            path.add(0,node); // addFirst is used to get the correct order
+        }
+        System.out.println(GetDirection(path));
+        return distance;
     }
     private static boolean ValidityCheck(ArrayList<ArrayList<Integer>> matrix, boolean[][] visited, int row, int col)
     {
@@ -50,7 +60,7 @@ public class Lee
     private static ArrayList<String> DirectionTranslator(ArrayList<String> In)
     {
         ArrayList<String> DirMap = new ArrayList<>(Arrays.asList("-1/0","0/-1","0/1","1/0"));
-        ArrayList<String> DirDict = new ArrayList<>(Arrays.asList("d","l","r","u"));
+        ArrayList<String> DirDict = new ArrayList<>(Arrays.asList("d","r","l","u"));
         ArrayList<String> Out = new ArrayList<>();
         for (String x: In)
         {
@@ -63,5 +73,29 @@ public class Lee
             }
         }
         return Out;
+    }
+    private static ArrayList<String> GetDirection(ArrayList<Node> In)
+    {
+        ArrayList<String> Out = new ArrayList<>();
+        if(In.size()>0)
+        {
+            for (int i = 1; i < In.size(); i++)
+            {
+                int x = In.get(i-1).ch.x - In.get(i).ch.x;
+                int y = In.get(i-1).ch.y - In.get(i).ch.y;
+                Out.add(x+"/"+y);
+            }
+            //return DirectionTranslator(Out);
+        }
+        System.out.println(Out);
+        return DirectionTranslator(Out);
+    }
+    private static boolean NodeCompare(Node n1,Node n2)
+    {
+        if(n1.ch.equals(n2.ch) && n1.distance == n2.distance)
+        {
+            return true;
+        }
+        return false;
     }
 }
