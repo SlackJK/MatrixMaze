@@ -3,19 +3,19 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class MainHelp
+public class InputParser
 {
     public Chords SourceChords;
     public Chords TargetChords;
     private int i =0;
     private String Source;
     private String Target;
-    public MainHelp(String Source,String Target)
+    public InputParser(String Source, String Target)
     {
         this.Source = Source;
         this.Target = Target;
     }
-    public  ArrayList<ArrayList<Integer>>InputToMatrix(String Input, String delim)
+    public   ArrayList<ArrayList<Integer>>InputToMatrix(String Input, String delim)
     {
         ArrayList<ArrayList<Integer>> out = new ArrayList<>();
         while(Input.contains(delim))

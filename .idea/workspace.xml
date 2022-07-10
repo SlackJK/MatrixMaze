@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc9e253c-efc1-4492-bf48-a2210e7bd29d" name="Changes" comment="Junit added to maven and first unit test written.">
+    <list default="true" id="fc9e253c-efc1-4492-bf48-a2210e7bd29d" name="Changes" comment="Tests written just input and it's tests and ui left.">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Lee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InputParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/LeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LeeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,6 +45,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": ""
@@ -56,7 +59,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.LeeTest.TestLeeAlgorithm4x4Grid">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MatrixMaze" />
@@ -69,6 +72,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="LeeTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeeTest.TestLeeAlgorithm4x4Grid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MatrixMaze" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LeeTest" />
+      <option name="METHOD_NAME" value="TestLeeAlgorithm4x4Grid" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,9 +108,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.LeeTest.TestLeeAlgorithm4x4Grid" />
         <item itemvalue="JUnit.LeeTest" />
         <item itemvalue="JUnit.LeeTest.VerifyChordOutput4x4Grid" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.LeeTest.TestWholeMatrixGenerator4x4Grid" />
       </list>
     </recent_temporary>
@@ -111,7 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657197811837</updated>
       <workItem from="1657197813211" duration="14181000" />
-      <workItem from="1657358325499" duration="28477000" />
+      <workItem from="1657358325499" duration="35523000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1657197939477</created>
@@ -162,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657460737814</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Tests written just input and it's tests and ui left.">
+      <created>1657466152215</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657466152215</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,14 +207,15 @@
     <MESSAGE value="Mid dev commit" />
     <MESSAGE value="Fully functioning alg, just input and final unit test left." />
     <MESSAGE value="Junit added to maven and first unit test written." />
-    <option name="LAST_COMMIT_MESSAGE" value="Junit added to maven and first unit test written." />
+    <MESSAGE value="Tests written just input and it's tests and ui left." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tests written just input and it's tests and ui left." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>21</line>
+          <line>17</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -208,7 +230,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>8</line>
+          <line>4</line>
           <properties class="Main" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
