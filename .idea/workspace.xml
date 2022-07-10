@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc9e253c-efc1-4492-bf48-a2210e7bd29d" name="Changes" comment="Mid dev commit">
+    <list default="true" id="fc9e253c-efc1-4492-bf48-a2210e7bd29d" name="Changes" comment="Fully functioning alg, just input and final unit test left.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/LeeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Lee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainHelp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -27,20 +31,33 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2BcG9UwCV6ItxrYm86OW2kD3MaR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": ""
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.LeeTest.TestWholeMatrixGenerator4x4Grid">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MatrixMaze" />
@@ -48,8 +65,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LeeTest.TestWholeMatrixGenerator4x4Grid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MatrixMaze" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LeeTest" />
+      <option name="METHOD_NAME" value="TestWholeMatrixGenerator4x4Grid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LeeTest.TestWholeMatrixGenerator4x4Grid" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -63,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657197811837</updated>
       <workItem from="1657197813211" duration="14181000" />
-      <workItem from="1657358325499" duration="20779000" />
+      <workItem from="1657358325499" duration="24515000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1657197939477</created>
@@ -93,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657393615930</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fully functioning alg, just input and final unit test left.">
+      <created>1657456297998</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657456297998</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,19 +150,20 @@
     <MESSAGE value="Lee alg implemented, cleaning and input left to write, and well ofcourse debuging. Possibly adding multithread." />
     <MESSAGE value="Created converter string to matrix, now just file input and flat input." />
     <MESSAGE value="Mid dev commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mid dev commit" />
+    <MESSAGE value="Fully functioning alg, just input and final unit test left." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fully functioning alg, just input and final unit test left." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>20</line>
+          <line>21</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Lee.java</url>
-          <line>48</line>
+          <line>47</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>

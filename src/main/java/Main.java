@@ -9,17 +9,17 @@ public class Main
     public static void main(String[] args)
     {
 
+
         String testin =
                 "..............\n" +
                 "..S..#....#...\n" +
-                ".....#....#.X.\n" +
+                "..X..#....#...\n" +
                 "..........#...\n";
 ;
         MainHelp MH = new MainHelp("S","X");
         ArrayList<ArrayList<Integer>> mat = MH.InputToMatrix(testin,"\n");
         Lee z = new Lee();
-        int x =z.alg(mat,MH.SourceChords,MH.TargetChords);
-        System.out.println(MH.TargetChords.x+","+MH.TargetChords.y);
+        ArrayList<String> x =z.alg(mat,MH.SourceChords,MH.TargetChords);
         System.out.println(x);
         /*
         Chords S = new MainHelp().Chord(test2d,"S");
