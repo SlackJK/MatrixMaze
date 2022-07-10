@@ -14,7 +14,7 @@ public class Lee
         boolean[][] visited = new boolean[McolL][MrowL];
         Queue<Node> q = new ArrayDeque<>();
 
-        visited[Spoint.x][Spoint.y] = true;
+        visited[Spoint.y][Spoint.x] = true;
         q.add(StartNode);
 
         ArrayList<String> out = new ArrayList<>();
@@ -24,7 +24,7 @@ public class Lee
         Chords curChord = new Chords(-1,-1);
         int distance = -1;
 
-        while(!q.isEmpty() && !(curChord.x == target.x && curChord.y == target.y))
+        while(!q.isEmpty() && !(curChord.y == target.y && curChord.x == target.x))
         {
             node = q.poll();
 
@@ -33,10 +33,10 @@ public class Lee
 
             for (int i = 0; i < 4; i++)
             {
-                if(ValidityCheck(matrix,visited,curChord.x+row[i], curChord.y+col[i]))
+                if(ValidityCheck(matrix,visited,curChord.y+row[i], curChord.x+col[i]))
                 {
-                    visited[curChord.x+row[i]][curChord.y+col[i]] = true;
-                    Node tempnode = new Node(new Chords(curChord.x+row[i], curChord.y+col[i]),distance+1);
+                    visited[curChord.y+row[i]][curChord.x+col[i]] = true;
+                    Node tempnode = new Node(new Chords(curChord.y+row[i], curChord.x+col[i]),distance+1);
                     q.add(tempnode);
                     HPath.put(tempnode,node);
                     out.add(row[i]+"/"+col[i]);
@@ -80,9 +80,9 @@ public class Lee
         {
             for (int i = 1; i < In.size(); i++)
             {
-                int x = In.get(i-1).ch.x - In.get(i).ch.x;
                 int y = In.get(i-1).ch.y - In.get(i).ch.y;
-                Out.add(x+"/"+y);
+                int x = In.get(i-1).ch.x - In.get(i).ch.x;
+                Out.add(y+"/"+x);
             }
             //return DirectionTranslator(Out);
         }

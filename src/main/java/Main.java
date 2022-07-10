@@ -11,10 +11,10 @@ public class Main
 
 
         String testin =
-                "..............\n" +
-                "..S..#....#...\n" +
-                "..X..#....#...\n" +
-                "..........#...\n";
+                "........\n" +
+                "..S..#..\n" +
+                ".....#X.\n" +
+                "........\n";
 ;
         MainHelp MH = new MainHelp("S","X");
         ArrayList<ArrayList<Integer>> mat = MH.InputToMatrix(testin,"\n");

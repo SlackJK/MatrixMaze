@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc9e253c-efc1-4492-bf48-a2210e7bd29d" name="Changes" comment="Fully functioning alg, just input and final unit test left.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/LeeTest.java" afterDir="false" />
+    <list default="true" id="fc9e253c-efc1-4492-bf48-a2210e7bd29d" name="Changes" comment="Junit added to maven and first unit test written.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Input.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Lee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainHelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LeeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,10 +56,19 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LeeTest.TestWholeMatrixGenerator4x4Grid">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MatrixMaze" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MatrixMaze" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LeeTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -75,10 +83,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LeeTest.VerifyChordOutput4x4Grid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MatrixMaze" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LeeTest" />
+      <option name="METHOD_NAME" value="VerifyChordOutput4x4Grid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LeeTest.TestWholeMatrixGenerator4x4Grid" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.LeeTest" />
+        <item itemvalue="JUnit.LeeTest.VerifyChordOutput4x4Grid" />
+        <item itemvalue="JUnit.LeeTest.TestWholeMatrixGenerator4x4Grid" />
       </list>
     </recent_temporary>
   </component>
@@ -91,7 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657197811837</updated>
       <workItem from="1657197813211" duration="14181000" />
-      <workItem from="1657358325499" duration="24515000" />
+      <workItem from="1657358325499" duration="28477000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1657197939477</created>
@@ -128,7 +148,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657456297998</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Junit added to maven and first unit test written.">
+      <created>1657460651394</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657460651394</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Junit added to maven and first unit test written.">
+      <created>1657460737814</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657460737814</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +185,8 @@
     <MESSAGE value="Created converter string to matrix, now just file input and flat input." />
     <MESSAGE value="Mid dev commit" />
     <MESSAGE value="Fully functioning alg, just input and final unit test left." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fully functioning alg, just input and final unit test left." />
+    <MESSAGE value="Junit added to maven and first unit test written." />
+    <option name="LAST_COMMIT_MESSAGE" value="Junit added to maven and first unit test written." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -165,6 +200,20 @@
           <url>file://$PROJECT_DIR$/src/main/java/Lee.java</url>
           <line>47</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Lee.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>8</line>
+          <properties class="Main" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
