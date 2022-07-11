@@ -10,7 +10,7 @@ public class Input extends InputParser
     public static String FileName = "MazeSolverTXTInput.txt";
     public static String jarDir;
     public static String os = System.getProperty("os.name");
-    public Input(String Source, String Target) {
+    public Input() {
         super("S", "X");
         InputType = UI.StartMessages();
     }
@@ -21,30 +21,54 @@ public class Input extends InputParser
             ParseFileInput();
             return;
         }
-        ParseConsoleInput();
+       ParseConsoleInput();
 
     }
-    private ArrayList<ArrayList<Integer>> ParseFileInput() throws IOException, URISyntaxException, InterruptedException
+    private void ParseFileInput() throws IOException, URISyntaxException, InterruptedException
     {
+        ArrayList<ArrayList<Integer>> Out = new ArrayList<>();
 
         CodeSource codeSource = Main.class.getProtectionDomain().getCodeSource();
         File jarFile = new File(codeSource.getLocation().toURI().getPath());
         jarDir = jarFile.getParentFile().getPath();
         String FilePath;
-        if(os.contains("Windows")){
+        if(os.contains("Windows"))
+        {
             FilePath = jarDir+"\\"+FileName;
             CreateTXT(FilePath);
         }
-        else{
+        else
+        {
             FilePath = jarDir+"/"+FileName;
             CreateTXT(FilePath);
         }
+
         UI.FileInputInRequest(FilePath);
-        return super.InputToMatrix(WaitForFileInput(FilePath),"\n");
+
+        try
+        {
+           Out = super.InputToMatrix(WaitForFileInput(FilePath),"\n");
+        }
+        catch (Exception e)
+        {
+            UI.InputValidityCheckFailure("Maze contains illegal characters");
+        }
+        InputValidityCheck(Out);
+
     }
-    private ArrayList<ArrayList<Integer>> ParseConsoleInput()
+    private void ParseConsoleInput() throws IOException, URISyntaxException, InterruptedException
     {
-        return super.InputToMatrix(UI.ConsoleInputInRequest(),"\n");
+        ArrayList<ArrayList<Integer>> Out = new ArrayList<>();
+        try
+        {
+            Out = super.InputToMatrix(UI.ConsoleInputInRequest(),"\n");
+        }
+        catch (Exception e)
+        {
+            UI.InputValidityCheckFailure("Maze contains illegal characters");
+        }
+        InputValidityCheck(Out);
+
     }
     private static String WaitForFileInput(String FilePath) throws InterruptedException
     {
@@ -93,5 +117,29 @@ public class Input extends InputParser
             System.out.println(e);
         }
         return Out;
+    }
+    private static void InputValidityCheck(ArrayList<ArrayList<Integer>> In) throws IOException, URISyntaxException, InterruptedException
+    {
+        int MinSize = 0;
+        int MaxSize = 0;
+        int CurSize;
+        for (int i = 0; i < In.size(); i++)
+        {
+            CurSize = In.get(i).size();
+            if(i==0){
+                MinSize = CurSize;
+                MaxSize = CurSize;
+            }
+            if(MaxSize>CurSize)
+                MaxSize = CurSize;
+            if(MinSize<CurSize)
+                MinSize = CurSize;
+            if(MinSize!=MaxSize)
+            {
+                UI.InputValidityCheckFailure("Matrix Maze is not square.");
+                return;
+            }
+        }
+        Main.matrix = In;
     }
 }

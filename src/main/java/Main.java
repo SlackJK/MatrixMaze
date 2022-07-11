@@ -1,9 +1,11 @@
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 public class Main
 {
-    public static void main(String[] args)
-    {
+    public static ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
+    public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
 
 
         String testin =
@@ -11,7 +13,13 @@ public class Main
                 "..S..#..\n" +
                 ".....#X.\n" +
                 "........\n";
-;
+
+        Input I = new Input();
+        Lee L = new Lee();
+        I.PickInput();
+        System.out.println("The shortest maze path through your maze is:");
+        System.out.println(L.alg(matrix,I.SourceChords,I.TargetChords));
+/*
         InputParser MH = new InputParser("S","X");
         //ArrayList<ArrayList<Integer>> mat = MH.InputToMatrix(testin,"\n");
         Lee z = new Lee();

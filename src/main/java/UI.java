@@ -1,6 +1,10 @@
 import jdk.nashorn.internal.ir.WhileNode;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.sql.Time;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class UI
 {
@@ -69,8 +73,11 @@ public class UI
         }
         return Out;
     }
-    public static void InputValidityCheckFailure(String error)
+    public static void InputValidityCheckFailure(String error) throws IOException, URISyntaxException, InterruptedException
     {
-        System.out.println("Input failed due to this error: " + error);
+        System.out.println("Input failed due to error: " + error);
+        TimeUnit.MILLISECONDS.sleep(600);
+        Input I = new Input();
+        I.PickInput();
     }
 }
