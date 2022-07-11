@@ -43,15 +43,10 @@ public class UI
                 "..#.\n"+
                 "..#.\n"+
                 "..#X\n";
-        String SampleInputFile =
-                ".S..\\n"+
-                "..#.\\n"+
-                "..#.\\n"+
-                "..#X\\n";
         if(InputType == 0)
         {
             System.out.println(WarningMessage);
-            System.out.println(SampleInputFile);
+            System.out.println(SampleInputConsole);
         }
         else{
             System.out.println(WarningMessage);
@@ -65,19 +60,26 @@ public class UI
     public static String ConsoleInputInRequest()
     {
         String Out = "";
-        System.out.println("Please type or paste in your maze:\n");
+        System.out.println("Please type or paste in your maze, to complete your input type \"done\" in a new line:\n");
         Scanner SC = new Scanner(System.in);
-        while(Out.length()<1)
+        while(SC.hasNext())
         {
-            Out = SC.nextLine();
+            String line = SC.nextLine();
+            if (line.contains("done"))
+            {
+                break;
+            }
+            Out += line+"\n";
         }
+        System.out.println("Your input:");
+        System.out.println(Out);
         return Out;
     }
     public static void InputValidityCheckFailure(String error) throws IOException, URISyntaxException, InterruptedException
     {
         System.out.println("Input failed due to error: " + error);
         TimeUnit.MILLISECONDS.sleep(600);
-        Input I = new Input();
-        I.PickInput();
+        Main.I = new Input();
+        Main.I.PickInput();
     }
 }

@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -9,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class LeeTest
 {
     @Test
-    void TestWholeMatrixGenerator4x4Grid()
+    void TestWholeMatrixGenerator4x4Grid() throws IOException, URISyntaxException, InterruptedException
     {
         String MethodIn = ".S..\n..#.\n..#.\n..#X\n";
         InputParser MH = new InputParser("S","X");
@@ -27,7 +29,7 @@ class LeeTest
 
     }
     @Test
-    void VerifyChordOutput4x4Grid()
+    void VerifyChordOutput4x4Grid() throws IOException, URISyntaxException, InterruptedException
     {
         String MethodIn =
                 ".S..\n"+
@@ -47,7 +49,7 @@ class LeeTest
         assertEquals(TrueTarget.y,MH.TargetChords.y);
     }
     @Test
-    void TestLeeAlgorithm4x4Grid()
+    void TestLeeAlgorithm4x4Grid() throws IOException, URISyntaxException, InterruptedException
     {
         String MethodIn = ".S..\n..#.\n..#.\n..#X\n";
         InputParser MH = new InputParser("S","X");

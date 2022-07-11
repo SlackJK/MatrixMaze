@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Main
 {
     public static ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
+    public static Input I = new Input();
     public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
 
 
@@ -14,11 +15,17 @@ public class Main
                 ".....#X.\n" +
                 "........\n";
 
-        Input I = new Input();
+
         Lee L = new Lee();
         I.PickInput();
         System.out.println("The shortest maze path through your maze is:");
-        System.out.println(L.alg(matrix,I.SourceChords,I.TargetChords));
+        if(matrix.size()>0)
+        {
+            System.out.println(L.alg(matrix, I.SourceChords, I.TargetChords));
+        }
+        else{
+            Main.main(null);
+        }
 /*
         InputParser MH = new InputParser("S","X");
         //ArrayList<ArrayList<Integer>> mat = MH.InputToMatrix(testin,"\n");

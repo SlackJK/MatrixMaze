@@ -28,10 +28,13 @@ public class Input extends InputParser
     {
         ArrayList<ArrayList<Integer>> Out = new ArrayList<>();
 
+
         CodeSource codeSource = Main.class.getProtectionDomain().getCodeSource();
         File jarFile = new File(codeSource.getLocation().toURI().getPath());
         jarDir = jarFile.getParentFile().getPath();
+
         String FilePath;
+
         if(os.contains("Windows"))
         {
             FilePath = jarDir+"\\"+FileName;
@@ -47,13 +50,14 @@ public class Input extends InputParser
 
         try
         {
-           Out = super.InputToMatrix(WaitForFileInput(FilePath),"\n");
+           Out = super.InputToMatrix(WaitForFileInput(FilePath).replace("\r",""),"\n");
         }
         catch (Exception e)
         {
             UI.InputValidityCheckFailure("Maze contains illegal characters");
         }
-        InputValidityCheck(Out);
+        if(Out.size()>0)
+            InputValidityCheck(Out);
 
     }
     private void ParseConsoleInput() throws IOException, URISyntaxException, InterruptedException
@@ -67,8 +71,8 @@ public class Input extends InputParser
         {
             UI.InputValidityCheckFailure("Maze contains illegal characters");
         }
-        InputValidityCheck(Out);
-
+        if(Out.size()>0)
+            InputValidityCheck(Out);
     }
     private static String WaitForFileInput(String FilePath) throws InterruptedException
     {
@@ -78,6 +82,8 @@ public class Input extends InputParser
             Input = TXTtoString(FilePath);
             TimeUnit.MILLISECONDS.sleep(100);
         }
+        System.out.println("Your input:");
+        System.out.println(Input);
         return Input;
     }
     private static void CreateTXT(String File) throws IOException //Old project copypaste
