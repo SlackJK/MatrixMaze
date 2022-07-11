@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc9e253c-efc1-4492-bf48-a2210e7bd29d" name="Changes" comment="Finished UI and debugging, now commenting.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="fc9e253c-efc1-4492-bf48-a2210e7bd29d" name="Changes" comment="Added performance metric." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +126,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657197811837</updated>
       <workItem from="1657197813211" duration="14181000" />
-      <workItem from="1657358325499" duration="44573000" />
+      <workItem from="1657358325499" duration="44919000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1657197939477</created>
@@ -215,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657533948035</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added performance metric.">
+      <created>1657535048914</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1657535048914</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +247,8 @@
     <MESSAGE value="UI and Input mostly is written, finish writing UI and error correcting for bad input, complete main class, and comment and clean." />
     <MESSAGE value="Prefinal commit, everything written debugging jar." />
     <MESSAGE value="Finished UI and debugging, now commenting." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished UI and debugging, now commenting." />
+    <MESSAGE value="Added performance metric." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added performance metric." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
