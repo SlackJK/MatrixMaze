@@ -21,7 +21,10 @@ public class Main
         System.out.println("The shortest maze path through your maze is:");
         if(matrix.size()>0)
         {
+            long StartTime = System.nanoTime();
             System.out.println(L.alg(matrix, I.SourceChords, I.TargetChords));
+            long EndTime = System.nanoTime();
+            System.out.println("Path found in: "+(EndTime-StartTime)+" nanoseconds or "+((EndTime-StartTime)/1000000)+" milliseconds");
         }
         else{
             Main.main(null);
